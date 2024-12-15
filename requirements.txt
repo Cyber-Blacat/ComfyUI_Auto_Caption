@@ -5,3 +5,4 @@ sentencepiece
 bitsandbytes
 #>=0.43.3
 bitsandbytes-windows>=0.37.5
+opencv-python
