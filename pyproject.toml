@@ -10,6 +10,6 @@ Repository = "https://github.com/Cyber-BCat/ComfyUI_Auto_Caption"
 #  Used by Comfy Registry https://comfyregistry.org
 
 [tool.comfy]
-PublisherId = "cyber-bcat"
+PublisherId = "CyberBlackCat"
 DisplayName = "ComfyUI_Auto_Caption"
 Icon = ""
