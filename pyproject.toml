@@ -11,5 +11,5 @@ Repository = "https://github.com/Cyber-BlackCat/ComfyUI_Auto_Caption"
 
 [tool.comfy]
 PublisherId = "cyber-blackcat"
-DisplayName = "ComfyUI Auto Caption"
+DisplayName = "ComfyUI_Auto_Caption"
 Icon = ""
