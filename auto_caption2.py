@@ -395,7 +395,7 @@ class Auto_Caption2:
     CATEGORY = "Auto Caption"
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("prompt",)
-    OUTPUT_NODE = True
+    # OUTPUT_NODE = True
     OUTPUT_IS_LIST = (True,)
     FUNCTION = "gen"
 
