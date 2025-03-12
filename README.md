@@ -1,4 +1,12 @@
-This report contains a "load many images" node which is going to load the image set by the number of file names from smallest to largest, and the images will no longer be loaded in the wrong order! Setting index=0 makes it load from the first small value (image flie name) image, and index=2 will load them from the second image.
+Update v1.0.2: Joy caption2 added.
+# Introduction:
+Joy Caption alpha 2 original demo and modelpackage:
+https://huggingface.co/spaces/fancyfeast/joy-caption-alpha-two
+the repo has taken some reference from: TTPlanetPig/Comfyui_JC2 and https://huggingface.co/John6666/joy-caption-alpha-two-cli-mod  
+![image](https://github.com/user-attachments/assets/09aac053-b5d0-45d9-b419-3e85b642584c)
+
+
+This report contains a "load many images" node which is going to load the image set by the number of file names from smallest to largest, and the images are NO LONGER loaded in the wrong order！!! Setting index=0 makes it load from the first small value (image flie name) image, and index=2 will load them from the second image.
 Another node "load images & resize" can resize the image by the first loaded image.
 
 flux dev运行效果 result runs by flux dev:
@@ -25,31 +33,35 @@ Notice：Follow these three steps to get started
 2. Run the automatic download model (manual download is recommended)
    
 
-  (1)."下载downloda"  https://huggingface.co/google/siglip-so400m-patch14-384 "放到putin" clip/siglip-so400m-patch14-384
+clip_vision  (1)."下载downloda"  https://huggingface.co/google/siglip-so400m-patch14-384 "放到putin" clip_vision/siglip-so400m-patch14-384
   
 
-![1](workflow/path-1.png)
 
 
+loras-LLM——  (2)."必须手动下载 manual download only"  https://huggingface.co/spaces/fancyfeast/joy-caption-pre-alpha/tree/main/wpkklhc6  "放到putin" loras-LLM
+  v1.0.1：Joy caption2 需下载joy-caption-alpha-two/cgrkzexw-599808 from https://huggingface.co/John6666/joy-caption-alpha-two-cli-mod
+  中国用户请使用：https://www.modelscope.cn/models/fireicewolf/joy-caption-alpha-two/files
 
-  (2)."必须手动下载 manual download only"  https://huggingface.co/spaces/fancyfeast/joy-caption-pre-alpha/tree/main/wpkklhc6  "放到putin" Auto_Caption 
-  
 
- ![2](workflow/path-autocaption.png)
-
- 
    
-  (3)."推荐下载download"  https://huggingface.co/unsloth/Meta-Llama-3.1-8B-bnb-4bit  （如果你有A100 可以考虑下载 meta-llama/Meta-Llama-3.1-8B "for A100"）"放到putin"  LLM/Meta-Llama-3.1-8B-bnb-4bit
-  
-  
-![3](workflow/path-llm.png)
+LLM——  (3)."推荐下载download"  https://huggingface.co/unsloth/Meta-Llama-3.1-8B-bnb-4bit  （如果你有A100 可以考虑下载 meta-llama/Meta-Llama-3.1-8B "for A100"）"放到putin"  LLM/Meta-Llama-3.1-8B-bnb-4bit
+   v1.0.1：Joy caption2: comfyUI/models/LLM/Llama-3.1-8B-Lexi-Uncensored-V2  or  /data/comfyUI/models/LLM/Meta-Llama-3.1-8B-Instruct
+   from https://huggingface.co/unsloth/Meta-Llama-3.1-8B-Instruct
+
+#clip_vision path show:
+
+![image](https://github.com/user-attachments/assets/db311cab-dcbc-454d-b76b-30ae1943de25)
+![1](workflow/path-1.png)  
+
+#loras-LLM path show:
+
+![image](https://github.com/user-attachments/assets/f5504545-70fa-4cfc-8991-290c73d99167)
+![2](workflow/path-autocaption.png)
+   
+#LLM path show:   
+
+![image](https://github.com/user-attachments/assets/0f7c013c-c319-44ee-9f24-d32f94bf9869)
 
 
 
-
-
-
-
-
-
-
+### Joy!
