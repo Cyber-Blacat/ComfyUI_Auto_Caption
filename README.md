@@ -94,10 +94,10 @@ flux dev运行效果 Result runs by flux dev:
 ## 示例工作流下载 example workflows download:
 
 auto caption 2 (joy2):   
-![JoyCaption2](workflow/auto caption 2 workflow.png)
+![JoyCaption2](workflow/autocaption2workflow.png)
 
 auto caption (alpha):  
-![JoyCaption2](workflow/auto caption 2 workflow.png)
+![JoyCaption2](autocaption2workflow.png)  
 
 # Joy!  
 
