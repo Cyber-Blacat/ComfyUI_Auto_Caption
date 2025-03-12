@@ -73,7 +73,7 @@ flux dev运行效果 Result runs by flux dev:
   
 ![caption](workflow/captionscreenshot.png)      
   
-[caption](workflow/autocaption2workflow.json)    
+[caption2workflow](workflow/autocaption2workflow.json)    
 
    
 
