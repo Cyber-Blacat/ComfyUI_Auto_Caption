@@ -88,7 +88,7 @@ class Joy_Model_load:
        
         # LLM
         MODEL_PATH = download_hg_model(self.model,"LLM")
-        LORA_PATH = os.path.join(folder_paths.models_dir, "loras-LLM", "cgrkzexw-599808")
+        LORA_PATH = os.path.join(folder_paths.models_dir, "loras-LLM", "wpkklhc6")
         tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH, use_fast=True)
         # tokenizer = AutoTokenizer.from_pretrained(os.path.join(CAPTION_PATH, "text_model"), use_fast=True)
         assert isinstance(tokenizer, PreTrainedTokenizer) or isinstance(tokenizer, PreTrainedTokenizerFast), f"Tokenizer is of type {type(tokenizer)}"
@@ -97,7 +97,7 @@ class Joy_Model_load:
         text_model.eval()
 
         # Image Adapter
-        adapter_path =  os.path.join(folder_paths.models_dir,"loras-LLM","image_adapter.pt")
+        adapter_path =  os.path.join(LORA_PATH,"image_adapter.pt")
 
         image_adapter = ImageAdapter(clip_model.config.hidden_size, text_model.config.hidden_size) # ImageAdapter(clip_model.config.hidden_size, 4096) 
         image_adapter.load_state_dict(torch.load(adapter_path, map_location="cpu"))

@@ -1,0 +1,211 @@
+{
+  "last_node_id": 24,
+  "last_link_id": 33,
+  "nodes": [
+    {
+      "id": 11,
+      "type": "LoadImage",
+      "pos": [
+        -1363.437744140625,
+        -348.83148193359375
+      ],
+      "size": [
+        315,
+        314
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            33
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "label": "MASK"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "合影.png",
+        "image"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "Joy Model load",
+      "pos": [
+        -1339.866943359375,
+        -554.1435546875
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "JoyModel",
+          "type": "JoyModel",
+          "links": [
+            22
+          ],
+          "label": "JoyModel"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Joy Model load"
+      },
+      "widgets_values": [
+        "unsloth/Meta-Llama-3.1-8B-bnb-4bit"
+      ]
+    },
+    {
+      "id": 21,
+      "type": "Auto Caption",
+      "pos": [
+        -967.9656372070312,
+        -405.05517578125
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "JoyModel",
+          "type": "JoyModel",
+          "link": 22,
+          "label": "JoyModel"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 33,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            32
+          ],
+          "slot_index": 0,
+          "label": "STRING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Auto Caption"
+      },
+      "widgets_values": [
+        "A descriptive caption for this image",
+        1024,
+        0.6,
+        false
+      ]
+    },
+    {
+      "id": 15,
+      "type": "TensorShow",
+      "pos": [
+        -482.87603759765625,
+        -470.9471130371094
+      ],
+      "size": [
+        516.292724609375,
+        238.0995330810547
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "tensor",
+          "type": "*",
+          "link": 32,
+          "label": "tensor"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "tensor",
+          "type": "*",
+          "links": null,
+          "label": "tensor"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TensorShow"
+      },
+      "widgets_values": [
+        "Not a tensor or not have a shape attribute. Original input is: depicting four young women posing against a blue backdrop with white geometric shapes. The image captures a vibrant, energetic scene with a pop culture theme. Each woman stands in a line, facing the camera. \n\nFrom left to right, the first woman has long, straight brown hair and wears a yellow, short-sleeved crop top with a leopard-print design. She also sports a black, frilly skirt and black tights. Her outfit is complemented by a black choker and a black headband. She makes a peace sign with her right hand.\n\nThe second woman has long, straight brown hair with bangs and wears a yellow, sleeveless crop top with a black mesh overlay. Her black, frilly skirt is cinched with a black belt and she wears black fishnet tights. She accessorizes with a silver choker and a black headband.\n\nThe third woman has long, straight brown hair with a red dye at the tips. She sports a silver, sleeveless crop top and a black, pleated skirt. Her outfit includes black fishnet tights and a black choker. She also wears a black headband.\n\nThe fourth woman has long, straight blonde hair styled in high pigtails. She sports a blue, sleeveless crop top and a black, pleated skirt. Her outfit includes a pink, tulle skirt over the black skirt and black fishnet tights. She accessorizes with a pink choker and a black headband. The women's expressions are playful and confident."
+      ]
+    }
+  ],
+  "links": [
+    [
+      22,
+      22,
+      0,
+      21,
+      0,
+      "JoyModel"
+    ],
+    [
+      32,
+      21,
+      0,
+      15,
+      0,
+      "*"
+    ],
+    [
+      33,
+      11,
+      0,
+      21,
+      1,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.45,
+      "offset": [
+        2998.0630086263022,
+        1697.4529020521375
+      ]
+    },
+    "node_versions": {
+      "comfy-core": "0.3.12"
+    },
+    "workspace_info": {
+      "id": "EMiGz6e2IVBk9D0n9gC3D",
+      "saveLock": false,
+      "cloudID": null,
+      "coverMediaPath": null
+    }
+  },
+  "version": 0.4
+}
