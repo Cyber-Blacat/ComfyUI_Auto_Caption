@@ -81,7 +81,6 @@ flux dev运行效果 Result runs by flux dev:
 #clip_vision path show:   
 
 ![image](https://github.com/user-attachments/assets/db311cab-dcbc-454d-b76b-30ae1943de25)
-![1](workflow/path-1.png)  
 
 #loras-LLM path show:   
 
