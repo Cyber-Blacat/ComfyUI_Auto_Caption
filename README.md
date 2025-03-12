@@ -50,11 +50,11 @@ siglip:  https://huggingface.co/google/siglip-so400m-patch14-384
 *Llama-3.1-8B-Lexi-Uncensored-V2*： https://huggingface.co/unsloth/Meta-Llama-3.1-8B-Instruct  
 >中国用户请使用：https://www.modelscope.cn/models/fireicewolf/Llama-3.1-8B-Lexi-Uncensored-V2/files    
 
-*Meta-Llama-3.1-8B-Instruct*： https://huggingface.co/unsloth/Meta-Llama-3.1-8B-Instruct  
->中国用户请使用：https://www.modelscope.cn/models/LLM-Research/Meta-Llama-3.1-8B-Instruct/files   
+*Meta-Llama-3.1-8B-Instruct*： https://huggingface.co/unsloth/Meta-Llama-3.1-8B-Instruct   
+>中国用户请使用：https://www.modelscope.cn/models/LLM-Research/Meta-Llama-3.1-8B-Instruct/files    
     
-### **Joy caption alpha**  
-bnb-4bit: https://huggingface.co/unsloth/Meta-Llama-3.1-8B-bnb-4bit  
+### **Joy caption alpha**   
+bnb-4bit: https://huggingface.co/unsloth/Meta-Llama-3.1-8B-bnb-4bit   
 >中国用户请使用：https://www.modelscope.cn/models/unsloth/Meta-Llama-3.1-8B-Instruct-unsloth-bnb-4bit/files   
   
 Llama-3.1-8B: https://huggingface.co/meta-llama/Llama-3.1-8B   
@@ -65,36 +65,36 @@ Llama-3.1-8B: https://huggingface.co/meta-llama/Llama-3.1-8B
 
 This report contains a "load many images" node which is going to load the image set by the order of Num of image from smallest to largest, and the images are NO LONGER loaded in the wrong order！!! Setting index=0 makes it load from the first image (image flie name order).    
 
-flux dev运行效果 Result runs by flux dev:  
+flux dev运行效果 Result runs by flux dev:   
 
-![flux](https://github.com/Cyber-BCat/ComfyUI_Auto_Caption/blob/main/workflow/show%20flux%20example.png)  
+![flux](https://github.com/Cyber-BCat/ComfyUI_Auto_Caption/blob/main/workflow/show%20flux%20example.png)   
 
-反推效果展示 caption result screenshot:   
-
-![caption](https://github.com/Cyber-BCat/ComfyUI_Auto_Caption/blob/main/workflow/caption.jpg)    
-
-   https://github.com/Cyber-BCat/ComfyUI_Auto_Caption/blob/main/workflow/autocaption%20exampleworkflow.json  
+反推效果展示 caption result screenshot:    
+  
+![caption](workflow/captionscreenshot.png)      
+  
+[caption](workflow/autocaption2workflow.json)    
 
    
 
 ## 路径截图 Path screenshot show  
 #clip_vision path show:   
 
-![image](https://github.com/user-attachments/assets/db311cab-dcbc-454d-b76b-30ae1943de25)
+![image](https://github.com/user-attachments/assets/db311cab-dcbc-454d-b76b-30ae1943de25)   
 
-#loras-LLM path show:   
+#loras-LLM path show:    
 
-![loras](workflow/path-loras-LLM.png)
+![loras](workflow/path-loras-LLM.png)  
    
 #LLM path show:   
 
-![image](https://github.com/user-attachments/assets/0f7c013c-c319-44ee-9f24-d32f94bf9869)
+![image](https://github.com/user-attachments/assets/0f7c013c-c319-44ee-9f24-d32f94bf9869)   
 
-
-## 示例工作流下载 example workflows download:
+  
+## 示例工作流下载 example workflows download:  
 
 auto caption 2 (joy2):   
-![JoyCaption2](workflow/autocaption2workflow.png)
+![JoyCaption2](workflow/autocaption2workflow.png)  
 
 auto caption (alpha):  
 ![JoyCaption2](autocaption2workflow.png)  
