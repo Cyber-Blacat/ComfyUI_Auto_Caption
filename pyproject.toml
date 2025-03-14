@@ -1,6 +1,6 @@
 [project]
 name = "comfyui_auto_caption"
-description = "Load images in order(All other nodes are in the wrong order)! Using LLM and Joy tag pipeline to tag your image(s folder), it's suitable for train FLUX LoRA and also sdxl."
+description = "Using LLM and Joy tag pipeline to tag your image(s folder), it's suitable for train FLUX LoRA and also sdxl. Load images in order!"
 version = "1.0.2"
 license = {file = "LICENSE"}
 dependencies = ["huggingface_hub==0.24.3", "accelerate", "#torch", "transformers>=4.43.3", "sentencepiece", "bitsandbytes>=0.43.3", "bitsandbytes-windows>=0.37.5"]
