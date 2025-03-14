@@ -376,17 +376,17 @@ class Joy_Model2_load:
         self.pipeline.tokenizer = tokenizer
         self.pipeline.image_adapter = adjusted_adapter
         # 打完收工，清一波中间缓存
-        if cache_model==False:
-            self.parent = None
-            del adjusted_adapter, tokenizer, self.llm_model, self.clip_model, self.clip_processor, llm_model
+        if cache_model==False:  
+            self.parent = adjusted_adapter = tokenizer = self.llm_model = self.clip_model = self.clip_processor = None
+            self.image_adapter = None
     # 用于此函数内一开始的清除
     def clearCache(self):
          if self.pipeline != None:
               self.pipeline.clearCache()
 
     def gen(self, llm_model, dtype, device="cuda:0"):
-        if self.llm_model == None or self.llm_model != llm_model or self.pipeline == None:
-            self.llm_model = llm_model
+        if self.pipeline.llm_model == None or self.pipeline.llm_model != llm_model or self.pipeline == None:
+            self.pipeline.llm_model = llm_model
             self.loadCheckPoint(llm_model, dtype, False, device)
         return (self.pipeline,)
 
