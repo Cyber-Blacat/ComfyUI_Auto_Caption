@@ -247,7 +247,7 @@ class Joy_Model2_load:
     RETURN_TYPES = ("JoyModel2",)
     FUNCTION = "gen"
 
-    def loadCheckPoint(self, llm_model, dtype, cache_model, device="cuda:0"):
+    def loadCheckPoint(self, llm_model, dtype, cache_model=False, device="cuda:0"):
         # cleanup
         if self.pipeline != None:
             self.pipeline.clearCache() 
@@ -289,7 +289,7 @@ class Joy_Model2_load:
                         print("Free VRAM is less than 20GB when loading 'bf16' model. Performing VRAM cleanup.")
                         cleanGPU()                    
                     # load LLM，使用所选设备。解包返回所需要的模型值
-                    modelspackage = llmloader(
+                    self.parent = llmloader(
                         llm_model_path, dtype, device=selected_device, device_map=None)
                     #定义中间属性，确认模型缓存
                     # self.clip_model = clip_model
@@ -298,10 +298,7 @@ class Joy_Model2_load:
                 except RuntimeError:
                     print("An error occurred while loading the model. Please check your configuration.")
             else:
-                modelspackage=self.parent
-                # self.pipeline.clip_model = self.clip_model
-                # self.pipeline.clip_processor = self.clip_processor
-                # self.pipeline.llm_model = self.llm_model
+                self.parent=self.parent
 
         except Exception as e:
             print(f"Error loading model: {e}")
@@ -344,11 +341,11 @@ class Joy_Model2_load:
         adapter_path =  os.path.join(CAPTION_PATH,"image_adapter.pt")
 
         
-        #解包三个模型
-        # clip_model = modelspackage[0]
-        # clip_processor = modelspackage[1]
-        # llm_model = modelspackage[2]
-        self.clip_model, self.clip_processor, self.llm_model = modelspackage
+        # 解包三个模型
+        self.clip_model = self.parent[0]
+        self.clip_processor = self.parent[1]
+        self.llm_model = self.parent[2]
+        # self.clip_model, self.clip_processor, self.llm_model = self.parent
         #统一用cuda加载imgadpter
         self.image_adapter = ImageAdapter(
                         self.clip_model.config.hidden_size, 
@@ -378,7 +375,10 @@ class Joy_Model2_load:
         self.pipeline.llm_model = self.llm_model
         self.pipeline.tokenizer = tokenizer
         self.pipeline.image_adapter = adjusted_adapter
-        
+        # 打完收工，清一波中间缓存
+        if cache_model==False:
+            self.parent = None
+            del adjusted_adapter, tokenizer, self.llm_model, self.clip_model, self.clip_processor, llm_model
     # 用于此函数内一开始的清除
     def clearCache(self):
          if self.pipeline != None:
@@ -387,7 +387,7 @@ class Joy_Model2_load:
     def gen(self, llm_model, dtype, device="cuda:0"):
         if self.llm_model == None or self.llm_model != llm_model or self.pipeline == None:
             self.llm_model = llm_model
-            self.loadCheckPoint(llm_model, dtype, True, device)
+            self.loadCheckPoint(llm_model, dtype, False, device)
         return (self.pipeline,)
 
 class Auto_Caption2:
@@ -401,7 +401,7 @@ class Auto_Caption2:
 
     def __init__(self):
         self.NODE_NAME = 'Auto Caption 2'
-        self.previous_model = None
+        self.parent = None
 
     @classmethod
     def INPUT_TYPES(cls):
