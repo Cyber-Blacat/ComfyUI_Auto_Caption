@@ -14,7 +14,7 @@ model types|    joy caption alpha                |          joy caption 2       
 -----------| ----------------------------------- | --------------------------------- | ------------- | 
 clip_vision|clip_vision/siglip-so400m-patch14-384|         "same as alpha"           |               |  
 LLM        |     LLM/Meta-Llama-3.1-8B-bnb-4bit  |LLM/Llama-3.1-8B-Lexi-Uncensored-V2|               |  
-LLM2       |         Meta-Llama-3.1-8B           |  LLM/Meta-Llama-3.1-8B-Instruct   |               |  
+LLM2       |     LLM/Meta-Llama-3.1-8B           |  LLM/Meta-Llama-3.1-8B-Instruct   |               |  
   loras-LLM|      loras-LLM/wpkklhc6             | loras-LLM/cgrkzexw-599808         |               | 
 
 
