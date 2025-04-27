@@ -15,7 +15,8 @@ jobs:
   publish-node:
     name: Publish Custom Node to registry
     runs-on: ubuntu-latest
-    if: ${{ github.repository_owner == 'Cyber-BCat' }}
+    if: ${{ github.repository_owner == 'Cyber-BlackCat' }}
+
     steps:
       - name: Check out code
         uses: actions/checkout@v4
