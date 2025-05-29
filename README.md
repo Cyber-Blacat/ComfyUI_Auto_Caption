@@ -14,7 +14,7 @@ model types|    joy caption alpha                |          joy caption 2       
 -----------| ----------------------------------- | --------------------------------- | ------------- | 
 clip_vision|clip_vision/siglip-so400m-patch14-384|         "same as alpha"           |               |  
 LLM        |     LLM/Meta-Llama-3.1-8B-bnb-4bit  |LLM/Llama-3.1-8B-Lexi-Uncensored-V2|               |  
-LLM2       |     LLM/Meta-Llama-3.1-8B           |  LLM/Meta-Llama-3.1-8B-Instruct   |               |  
+LLM2       |         Meta-Llama-3.1-8B           |  LLM/Meta-Llama-3.1-8B-Instruct   |               |  
   loras-LLM|      loras-LLM/wpkklhc6             | loras-LLM/cgrkzexw-599808         |               | 
 
 
@@ -67,13 +67,13 @@ This report contains a "load many images" node which is going to load the image 
 
 flux dev运行效果 Result runs by flux dev:   
 
-![flux](https://github.com/Cyber-BCat/ComfyUI_Auto_Caption/blob/main/workflow/show%20flux%20example.png)   
+![flux](example_workflows/show%20flux%20example.png)   
 
 反推效果展示 caption result screenshot:    
   
-![caption](workflow/captionscreenshot.png)      
+![caption](example_workflows/captionscreenshot.png)      
   
-[caption2workflow](workflow/autocaption2workflow.json)    
+[caption2workflow](example_workflows/autocaption2workflow.json)    
 
    
 
@@ -84,7 +84,7 @@ flux dev运行效果 Result runs by flux dev:
 
 #loras-LLM path show:    
 
-![loras](workflow/path-loras-LLM.png)  
+![loras](example_workflows/path-loras-LLM.png)  
    
 #LLM path show:   
 
@@ -94,10 +94,10 @@ flux dev运行效果 Result runs by flux dev:
 ## 示例工作流下载 example workflows download:  
 
 auto caption 2 (joy2):   
-![JoyCaption2](workflow/autocaption2workflow.png)  
+![JoyCaption2](example_workflows/autocaption2workflow.png)  
 
 auto caption (alpha):  
-![JoyCaption2](autocaption2workflow.png)  
+![JoyCaption2](example_workflows/autocaption2workflow.png)  
 
 # Joy!  
 
