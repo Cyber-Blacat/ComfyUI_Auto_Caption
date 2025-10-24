@@ -101,4 +101,4 @@ auto caption (alpha):
 
 # Joy!  
 
-*You can show something by this node report: https://github.com/Cyber-BlackCat/ComfyUI-MoneyMaker.git*     
+*You can show something by this node report: https://github.com/Cyber-Blacat/ComfyUI-MoneyMaker.git*     
